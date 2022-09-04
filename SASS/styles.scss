@@ -1,3 +1,67 @@
-*{
-    color: salmon;
+@import 'config';
+@import 'utilities';
+@import 'buttons';
+
+
+body{
+    background-color: $light-color;
+    font-family: $font-stack;
+    line-height: 1.6;
+}
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.showcase{
+    background-color: $primary-color;
+    color: white;
+    height: 600px;
+
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        ul{
+            display: flex;
+            list-style: none;
+        }
+
+        li{
+            padding: 15px;
+        }
+
+        a:hover{
+            color: $secondary-color;
+        }
+    }
+
+    a{
+        color: white;
+    }
+
+    img{
+        width: 50%;
+    }
+
+    &-content{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1{
+            font-size: 50px;
+            line-height: 1.2;
+        }
+
+        p{
+            margin: 20px 0;
+        }
+    }
 }

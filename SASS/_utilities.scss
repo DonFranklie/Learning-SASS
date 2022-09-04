@@ -1,0 +1,15 @@
+//Styles that apply to various parts not in the same place. 
+//Universal style
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    max-width: 1100px;
+    padding: 0 30px;
+    margin: 0 auto;
+    overflow: auto;
+}

@@ -1,3 +1,23 @@
+.m-space {
+  margin: space rem;
+}
+
+.m-space {
+  margin: space rem;
+}
+
+.m-space {
+  margin: space rem;
+}
+
+.m-space {
+  margin: space rem;
+}
+
+.m-space {
+  margin: space rem;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -23,11 +43,13 @@
 }
 
 .btn-primary {
-  background: linear-gradient(to-right, darkorange 75%, red);
+  background-color: black;
+  color: #fff;
 }
 
 .btn-secondary {
   background-color: #e67b02;
+  color: #fff;
 }
 
 body {
@@ -46,7 +68,7 @@ a {
 
 .showcase {
   background-color: #0e6f87;
-  color: white;
+  color: #fff;
   height: 600px;
 }
 .showcase nav {
@@ -61,11 +83,14 @@ a {
 .showcase nav li {
   padding: 15px;
 }
+.showcase nav a {
+  transition: color 0.15s;
+}
 .showcase nav a:hover {
   color: #e67b02;
 }
 .showcase a {
-  color: white;
+  color: #fff;
 }
 .showcase img {
   width: 50%;
@@ -79,7 +104,4 @@ a {
 .showcase-content h1 {
   font-size: 50px;
   line-height: 1.2;
-}
-.showcase-content p {
-  margin: 20px 0;
 }

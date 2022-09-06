@@ -18,8 +18,7 @@ a{
 }
 
 .showcase{
-    background-color: $primary-color;
-    color: white;
+    @include set-background($primary-color);
     height: 600px;
 
     nav{
@@ -36,13 +35,16 @@ a{
             padding: 15px;
         }
 
+            a{
+                transition: color .15s;
+            }
         a:hover{
             color: $secondary-color;
         }
     }
 
-    a{
-        color: white;
+    a{    
+        color: set-text-color($primary-color);
     }
 
     img{
@@ -60,8 +62,5 @@ a{
             line-height: 1.2;
         }
 
-        p{
-            margin: 20px 0;
-        }
     }
 }

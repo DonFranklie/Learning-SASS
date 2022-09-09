@@ -22,17 +22,3 @@ $secondary-color: #e67b02;
     background-color: $color;
     color: set-text-color($color);
 }
-
-//Margin and padding Classes
-
-$space-amounts: (1,2,3,4,5);
-
-@each $space in $space-amounts {
-    .m-#{space} {
-        margin: #{space} rem;
-    }
-
-    .my-#{space} {
-        margin: #{space} rem;
-    }
-}

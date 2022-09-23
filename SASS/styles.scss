@@ -1,70 +1,73 @@
-@import 'config';
+@import 'variables';
+@import 'resets';
 
+@function weight($weight-name){
+    @return map-get($font-weights , $weight-name )
+};
 
+//Content I don't want to repeat
+@mixin flexCenter($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: $direction;
+    
+}
+
+@mixin theme($light-theme: true) {
+
+    @if $light-theme {
+        background: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    }
+
+}
+
+@mixin mobile {
+    @media (max-width: $mobile){
+        @content;
+    }
+}
 
 body{
-    background-color: $light-color;
-    font-family: $font-stack;
-    line-height: 1.6;
+    background-color: $primary-color;
+    color: $text-color;
 }
 
-img{
-    width: 100%;
-}
+.main{
+    @include flexCenter(row);
+    width: 80% - 40%;
+    margin: 0 auto;
+   
 
-a{
-    text-decoration: none;
-}
+    #{&}__paragraph1{  //Curly braces and # are to specify the place of the class
+        font-weight: weight(regular);
+        cursor: pointer;
+        font-size: $paragraph-font-size;
+        transition: all .4s;
 
-.showcase{
-    @include set-background($primary-color);
-    height: 600px;
-
-    nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    
-        ul{
-            display: flex;
-            list-style: none;
-        }
-
-        li{
-            padding: 15px;
-        }
-
-            a{
-                transition: color .15s;
-            }
-        a:hover{
-            color: $secondary-color;
+        &:hover{
+            color: pink;
         }
     }
 
-    a{    
-        color: set-text-color($primary-color);
+    #{&}__paragraph2{
+        @extend  .main__paragraph1;
+
+
+        &:hover{
+            color: $accent-color;
+        }     
+
     }
 
-    img{
-        width: 50%;
-    }
-
-    &-content{
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 30px;
-
-        h1{
-            font-size: 50px;
-            line-height: 1.2;
-        }
+    @include mobile{
+        flex-direction: column
 
     }
 }
 
-@import 'mobile';
-@import 'utilities';
-@import 'buttons';
+.light{
+    @include theme(true);
+}
